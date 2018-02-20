@@ -15,7 +15,7 @@ export default RestrictedUserRoute.extend({
     this.render('preferences', { into: 'user', controller: 'preferences' });
   },
 
-  setupController(controller, user) {
-    controller.setProperties({ model: user, newUsername: user.get('username') });
+  setupController(controller, model) {
+    controller.setProperties({ model, newUsername: model.get('username') });
   }
 });

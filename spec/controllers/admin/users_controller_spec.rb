@@ -265,6 +265,7 @@ describe Admin::UsersController do
       end
     end
 
+<<<<<<< HEAD
     context '#disable_second_factor' do
       before do
         @another_user = Fabricate(:user)
@@ -278,6 +279,8 @@ describe Admin::UsersController do
       end
     end
 
+=======
+>>>>>>> WIP: Review Changes.
     context '#add_group' do
       let(:user) { Fabricate(:user) }
       let(:group) { Fabricate(:group) }

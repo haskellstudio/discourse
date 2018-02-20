@@ -40,12 +40,12 @@ class EmailToken < ActiveRecord::Base
   end
 
   def self.second_factor_valid(token, second_factor_token)
-    # Fail only when token is valid, second factor token is required, and does NOT check out.
     return true unless valid_token_format?(token)
     email_token = confirmable(token)
     return true if email_token.blank?
-    return true unless SecondFactorHelper.totp_enabled?(email_token.user)
-    return SecondFactorHelper.authenticate(email_token.user, second_factor_token)
+    user = email_token.user
+    return true unless user.totp_enabled?
+    return user.authenticate_totp(second_factor_token)
   end
 
   def self.atomic_confirm(token)

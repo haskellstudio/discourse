@@ -55,7 +55,6 @@ export default Ember.Controller.extend(PasswordValidation, {
             });
           }
           else if (this.get('secondFactorRequired')) {
-            //ok 2factor
             this.set('secondFactorRequired',false);
             this.set('errorMessage', null);
           }

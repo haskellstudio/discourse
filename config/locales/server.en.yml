@@ -49,6 +49,7 @@ en:
   loading: "Loading"
   powered_by_html: 'Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled'
   log_in: "Log In"
+  submit: "Submit"
 
   purge_reason: "Automatically deleted as abandoned, deactivated account"
   disable_remote_images_download_reason: "Remote images download was disabled because there wasn't enough disk space available."
@@ -1783,10 +1784,9 @@ en:
     auth_complete: "Authentication is complete."
     click_to_continue: "Click here to continue."
     already_logged_in: "Oops, looks like you are attempting to accept an invitation for another user. If you are not %{current_user}, please log out and try again."
-    second_factor_title: "2-Step Verification Required"
-    second_factor_description: "Enter a generated verification code."
-    invalid_second_factor_code: "Invalid 2-Step Verification Code"
-    submit: "Submit"
+    second_factor_title: "Two Factor Authentication Required"
+    second_factor_description: "Enter a generated authentication code."
+    invalid_second_factor_code: "Invalid Two Factor Authentication Code"
 
   user:
     no_accounts_associated: "No accounts associated"

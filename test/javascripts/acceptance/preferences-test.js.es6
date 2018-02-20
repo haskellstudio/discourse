@@ -10,7 +10,7 @@ acceptance("User Preferences", {
       ];
     };
 
-    server.post('/second_factor/create', () => { //eslint-disable-line
+    server.post('/second_factors', () => { //eslint-disable-line
       return response({key: "rcyryaqage3jexfj", qr: '<div id="test-qr">qr-code</div>'});
     });
   }
