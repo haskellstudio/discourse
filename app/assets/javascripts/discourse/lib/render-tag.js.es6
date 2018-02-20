@@ -8,7 +8,7 @@ export default function renderTag(tag, params) {
     const current_user = Discourse.User.current();
     path = params.isPrivateMessage && current_user && current_user.staff ? `/u/${current_user.username}/messages/tag/${tag}` : `/tags/${tag}`;
   }
-  const href = path ? " href='" + Discourse.getURL(path) + "' " : "";
+  const href = path ? ` href='${Discourse.getURL(path)}' ` : "";
 
   if (Discourse.SiteSettings.tag_style || params.style) {
     classes.push(params.style || Discourse.SiteSettings.tag_style);
