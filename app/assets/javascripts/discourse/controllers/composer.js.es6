@@ -135,12 +135,13 @@ export default Ember.Controller.extend({
 
   topicModel: Ember.computed.alias('topicController.model'),
 
-  @computed('model.canEditTitle', 'model.creatingPrivateMessage')
-  canEditTags(canEditTitle, creatingPrivateMessage) {
+  @computed('model.canEditTitle', 'model.creatingPrivateMessage', 'isStaffUser')
+  canEditTags(canEditTitle, creatingPrivateMessage, isStaffUser) {
     return !this.site.mobileView &&
             this.site.get('can_tag_topics') &&
             canEditTitle &&
-            !creatingPrivateMessage;
+            !creatingPrivateMessage &&
+            (!this.get('model.topic.isPrivateMessage') || isStaffUser);
   },
 
   @computed('model.whisper', 'model.unlistTopic')
